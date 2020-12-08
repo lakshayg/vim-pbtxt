@@ -1,0 +1,64 @@
+foo {
+  zero: 0
+  invalid_zero: 00
+
+  positive_integer: 1
+  positive_integer: 100
+  positive_integer: 1345678
+  invalid_positive_integer: 01
+  invalid_positive_integer: 00123
+  invalid_positive_integer: 123ff
+
+  hex_integer: 0x0
+  hex_integer: 0x1234
+  hex_integer: 0x0123456789ABCDEF9876543210
+  hex_integer: 0x0123456789abcdef9876543210
+  hex_integer: 0X0
+  hex_integer: 0X1234
+  hex_integer: 0X0123456789ABCDEF9876543210
+  hex_integer: 0X0123456789ABCDEF9876543210
+  invalid_hex_integer: 0xG
+  invalid_hex_integer: 0XG
+
+  float: 1.2345
+  float: 0.12345
+  float: .12345
+  float: 1234.
+  float: 1e04
+  float: 1e4
+  float: 1.2345e1
+  float: 1.2345e01
+  float: 0.12345e1
+  float: .12345e1
+  float: .12345e01
+  float: 1234.e1
+  float: 1234.e01
+  float: 1.2345E1
+  float: 1.2345E01
+  float: 0.12345E1
+  float: .12345E1
+  float: .12345E01
+  float: 1234.E1
+  float: 1234.E01
+  float: 1e-04
+  float: 1e-4
+  float: 1.2345e-1
+  float: 1.2345e-01
+  float: 0.12345e-1
+  float: .12345e-1
+  float: .12345e-01
+  float: 1234.e-1
+  float: 1234.e-01
+  float: 1.2345E-1
+  float: 1.2345E-01
+  float: 0.12345E-1
+  float: .12345E-1
+  float: .12345E-01
+  float: 1234.E-1
+  float: 1234.E-01
+  invalid_float: 00.12345
+  invalid_float: 1.2345e
+
+  string: "Hello World"
+  string_with_quotes: "Hello \"World\""
+}
