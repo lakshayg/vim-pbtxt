@@ -18,7 +18,15 @@ syn keyword pbtxtBool     true false contained
 
 syn match   pbtxtInt      display   "\<\(0\|[1-9]\d*\)\>"
 syn match   pbtxtHex      display   "\<0[xX]\x\+\>"
-syn match   pbtxtFloat    display   "\(0\|[1-9]\d*\)\=\.\d*"
+
+" These regexes were taken from Vim's C syntax file with slight modifications
+" 1. Floating point number, with dot, optional exponent
+syn match   pbtxtFloat    display   "\(0\|[1-9]\d*\)\.\d*\(e[-+]\=\d\+\)\="
+" 2. Floating point number, starting with a dot, optional exponent
+syn match   pbtxtFloat    display   "\.\d\+\(e[-+]\=\d\+\)\=\>"
+" 3. Floating point number, without dot, with exponent
+syn match   pbtxtFloat    display   "\d\+e[-+]\=\d\+\>"
+
 syn match   pbtxtMessage  display   "^\s*\w\+\s*{"me=e-1
 syn match   pbtxtField    display   "^\s*\w\+:"me=e-1
 syn match   pbtxtEnum     display   ":\s*\a\w\+"ms=s+1   contains=pbtxtBool
