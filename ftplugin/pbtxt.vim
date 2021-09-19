@@ -15,6 +15,8 @@ set cpo&vim
 
 setlocal commentstring=#\ %s
 
+let b:undo_ftplugin = "setlocal cms<"
+
 let &cpo = s:cpo_save
 unlet s:cpo_save
 
